@@ -1,2 +1,5 @@
+import os
+
 SUT_BUG = False
-SUT_BUG = True
+if os.environ.get('SUT_BUG') is not None:
+    SUT_BUG = True
