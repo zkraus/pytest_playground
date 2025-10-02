@@ -1,0 +1,14 @@
+/::test_a:
+    tester: Zdenek Kraus
+    tags: [Base]
+    description: basic test asserts True
+    time: 1ms
+
+/::test_b:
+    description: second test description
+    authors:
+        - Zdenek Kraus
+
+/::TestClass::basic_test:
+    summary: test inside test class
+
