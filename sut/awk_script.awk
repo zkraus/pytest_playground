@@ -2,13 +2,14 @@
 BEGIN   {
 #    print "--BEGIN " $FILENAME
 #    print FILENAME
+    print "Test case,asserts"
 }
 
 #BEGINFILE {print FILENAME}
 
 /^def test_/        {
     name = $2
-    gsub(/:/, "",name)
+    gsub(/\(.*$/, "",name)
     test_name = FILENAME"::"name
     test_cases[test_name] = 0
 #    print test_name
@@ -22,7 +23,7 @@ BEGIN   {
 END     {
 
     for (i in test_cases) {
-        print i " = " test_cases[i]
+        print i "," test_cases[i]
     }
 
 }
