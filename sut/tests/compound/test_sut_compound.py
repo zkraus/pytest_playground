@@ -1,6 +1,6 @@
 def test_authorization(sut):
 
-    user = 'guest'
+    user = "guest"
 
     result = sut.get()
     assert result == (200, "Data!")

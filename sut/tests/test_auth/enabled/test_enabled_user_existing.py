@@ -9,10 +9,10 @@ def sut(user):
     sut.add_user(user)
     return sut
 
+
 @pytest.fixture(scope="module")
 def user():
-    return 'guest'
-
+    return "guest"
 
 
 def test_no_user(sut):
@@ -20,7 +20,8 @@ def test_no_user(sut):
     result = sut.get()
     assert result == (401, "Error: Unauthorized")
 
-def test_user(sut,user):
+
+def test_user(sut, user):
 
     result = sut.get(user)
     assert result == (200, "Data!")
